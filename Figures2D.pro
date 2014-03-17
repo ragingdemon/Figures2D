@@ -11,7 +11,10 @@ SOURCES += main.cpp \
     square.cpp \
     line.cpp \
     triangle.cpp \
-    equilateral.cpp
+    equilateral.cpp \
+    ellipse.cpp \
+    circle.cpp \
+    rigth.cpp
 
 HEADERS += \
     figure2d.h \
@@ -21,5 +24,8 @@ HEADERS += \
     square.h \
     line.h \
     triangle.h \
-    equilateral.h
+    equilateral.h \
+    ellipse.h \
+    circle.h \
+    rigth.h
 

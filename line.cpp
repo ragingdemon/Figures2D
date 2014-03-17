@@ -1,6 +1,13 @@
 #include "line.h"
 #include <cmath>
 
+bool Line::sharePoint(double num,double left,double rigth)const
+{
+    if ((equals(num,left) || num > left) && (equals(num,rigth) || num < rigth)) {
+        return true;
+    }
+    return false;
+}
 
 Line::Line(Point2D &a, Point2D &b)
 {
@@ -26,7 +33,7 @@ Line::Line(const Line &l) :
 
 }
 
-bool Line::equals(double a, double b)
+bool Line::equals(double a, double b) const
 {
     double number = std::abs(a - b) ;
     if (number < 0.0001) {
@@ -34,3 +41,28 @@ bool Line::equals(double a, double b)
     }
     return false;
 }
+
+double Line::m() const
+{
+    if (equals(domainLeft,domainRigth)) {
+        return (rangeLeft-rangeRigth)/0.0001;
+    }
+    return (rangeLeft-rangeRigth)/(domainLeft-domainRigth);
+}
+
+double Line::b(double x, double y) const
+{
+    return y - m()*x;
+}
+
+bool Line::intersects(const Line &l) const
+{
+    if (sharePoint(l.domainLeft,domainLeft,domainRigth) || sharePoint(l.domainRigth,domainLeft,domainRigth)) {
+        if (sharePoint(l.rangeLeft,rangeLeft,rangeRigth) || sharePoint(l.rangeRigth,rangeLeft,rangeRigth)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+

@@ -13,6 +13,6 @@ public:
     virtual ~Quadrilateral();
     virtual double area()const=0;
     virtual double perimetro()const=0;
-    virtual bool intersects()const=0;
+    virtual bool intersects(const Figure2D &f)const=0;
     virtual string toString();
 };

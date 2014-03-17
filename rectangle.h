@@ -10,5 +10,5 @@ public:
     virtual ~Rectangle();
     virtual double area()const;
     virtual double perimetro()const;
-    virtual bool intersects()const;
+    virtual bool intersects(const Figure2D &f)const;
 };

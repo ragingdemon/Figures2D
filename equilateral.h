@@ -7,5 +7,5 @@ class Equilateral : public Triangle
 public:
     Equilateral(Point2D a, double l = 1);
     Equilateral(const Equilateral& e);
-    virtual ~Equilateral();
+    virtual ~Equilateral();   
 };

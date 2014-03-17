@@ -2,10 +2,21 @@
 #include "typeinfo"
 int Figure2D::count = 0;
 
+
+Line **Figure2D::getLines() const
+{
+    return lines;
+}
+
+
+int Figure2D::getSize() const
+{
+    return size;
+}
 Figure2D::Figure2D(int size) :
     size(size)
 {
-    count++;    
+    count++;
     lines = new Line*[size];
     for (int i = 0; i < size; ++i) {
         lines[i] = NULL;

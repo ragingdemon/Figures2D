@@ -17,3 +17,4 @@ Equilateral::~Equilateral()
 {
 
 }
+
